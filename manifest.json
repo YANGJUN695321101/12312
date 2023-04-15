@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "拼多多浏览器插件",
+  "version": "1.0.0",
+  "description": "用于获取拼多多商品信息的专用插件",
+  "permissions": ["activeTab", "declarativeContent", "downloads", "storage", "https://mobile.pinduoduo.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.pinduoduo.com/*", "https://mobile.pinduoduo.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
+
